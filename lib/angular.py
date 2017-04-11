@@ -1,37 +1,37 @@
 import os
+from . import parser
+from . import typescript
+from .settings import PATH 
 
-import lib.parser
-
-PATH = 'D:\\Workspace\\Python\\YACli\\templates\\'
 
 def angular2_component(name):
     print('Creando Angular2 Component ->', name)
-    filename = name.lower() + '.component'
-    foldername = name.lower()
+    filename = parser.to_pascal(name) + '.component'
+    foldername = parser.to_pascal(name)
     data = {
-        'selector': name.lower(),
+        'selector': parser.to_pascal(name),
         'templatename': filename + '.html',
         'classname': name + 'Component',
     }
     os.system('mkdir ' + foldername)
     os.system('touch ' + foldername + '/' + filename + '.html')
-    # Todo falta implementar el resto
-    # path = os.getcwd()
-    template = open(PATH + 'angular2-component.tpl', 'r').readlines()
-    output = open(foldername + '/' + filename + '.ts', 'w')
-
-    for line in template:
-        tokens = lib.parser.get_tokens(line)
-        if (len(tokens) > 0):
-            for token in tokens:
-                value = data.get(token, None)
-                if value != None:
-                    token = '%' + token + '%'
-                    line = line.replace(token, value)
-        output.write(line)
-    output.close()
+    os.system('touch ' + foldername + '/' + filename + '.css')
+    output = foldername + '/' + filename + '.ts'
+    parser_ = parser.View('angular2-component.tpl')
+    parser_.build_and_save(data, output)
 
 
 def angular2_service(name):
     print('Creando Angular2 Service ->', name)
-    pass
+    data = {
+        'classname': name + 'Service',
+    }
+    output = parser.to_pascal(name) + '.service.ts'
+    parser_ = parser.View('angular2-service.tpl')
+    parser_.build_and_save(data, output)
+
+def angular2_class(name):
+    """
+        decorator
+    """
+    typescript.typescript_class(name)
