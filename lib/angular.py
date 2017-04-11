@@ -14,8 +14,8 @@ def angular2_component(name):
         'classname': name + 'Component',
     }
     os.system('mkdir ' + foldername)
-    os.system('touch ' + foldername + '/' + filename + '.html')
-    os.system('touch ' + foldername + '/' + filename + '.css')
+    parser.blank_file(foldername + '/' + filename + '.html')
+    parser.blank_file(foldername + '/' + filename + '.css')
     output = foldername + '/' + filename + '.ts'
     parser_ = parser.View('angular2-component.tpl')
     parser_.build_and_save(data, output)

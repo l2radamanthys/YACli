@@ -27,6 +27,13 @@ def to_pascal(text):
     return pattF.sub(r'\1-\2', pattP.sub(r'\1-\2', text)).lower()
 
 
+def blank_file(file_path):
+    """
+        Crea un archivo en blanco
+    """
+    open(file_path, 'a').close()
+
+
 class View:
     """
         View parse class
@@ -64,3 +71,5 @@ if __name__ == '__main__':
     test = 'hola %titulo% como %sdev% estas, que dia %34% es hoy'
     print(to_pascal("HolaComoEstasFEOs"))
     print(get_tokens(test))
+
+
