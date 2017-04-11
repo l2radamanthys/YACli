@@ -10,11 +10,17 @@ def call_handler(argv):
     elif element == 'angular-service' or element == 'ng-s':
         angular.angular2_service(argv[1])
 
-    elif element == 'typescript-class' or element == 'ts-c':
-        typescript.typescript_class(argv[1])
+    elif element == 'angular-module' or element == 'ng-m':
+        angular.angular2_module(argv[1])
+
+    elif element == 'angular-pipe' or element == 'ng-p':
+        angular.angular2_pipe(argv[1])
 
     elif element == 'angular-class':
         angular.angular2_class(argv[1])
+
+    elif element == 'typescript-class' or element == 'ts-c':
+        typescript.typescript_class(argv[1])
 
 
     else:
