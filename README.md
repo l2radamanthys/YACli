@@ -20,7 +20,7 @@ Donde:
 Crea una carpeta con la siguiente extructura
 
     ./[nombre]
-        [nombre].component.ts
+		[nombre].component.ts
 		[nombre].component.html
 		[nombre].css
 
