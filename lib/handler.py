@@ -6,5 +6,8 @@ def call_handler(argv):
     if element == 'angular-component':
         lib.angular.angular2_component(argv[1])
 
-    if element == 'angular-service':
+    elif element == 'angular-service':
         lib.angular.angular2_service(argv[1])
+
+    else:
+        print('Comando no valido')

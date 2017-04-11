@@ -1,7 +1,7 @@
 import re
 
 
-def getTokens(text, tokens=[]):
+def get_tokens(text, tokens=[]):
     regex = re.compile(r'%\w+%')
     result = regex.search(text)
     if result != None:
@@ -9,9 +9,27 @@ def getTokens(text, tokens=[]):
         text = text.replace(result, '')
         result = result.replace('%', '')
         tokens.append(result)
-        return getTokens(text, tokens)
+        return get_tokens(text, tokens)
     else:
         return tokens
+
+
+
+class View:
+    def __init__():
+        data = {}
+
+
+    def build():
+        pass
+
+
+    def save():
+        pass
+
+
+def view_build(template_name='', data={}):
+    pass
 
 
 # Testing

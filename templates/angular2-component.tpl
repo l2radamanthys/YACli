@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: '%selector%'
-    template: './%templatename%'
+    selector: '%selector%',
+    templateUrl: './%templatename%'
 })
 export class %classname% {}
