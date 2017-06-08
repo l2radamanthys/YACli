@@ -27,8 +27,11 @@ def call_handler(argv):
         print('Comando no valido:', element)
         print(
             'use:',
-            'angular-component',
-            'angular-service',
-            'typescript-class',
+            'angular-component | ng-c',
+            'angular-service | ng-s',
+            'typescript-class | ng-m',
+            'angular-pipe | ng-p',
+            'angular-module | ng-p'
             'angular-class',
+            'typescript-class | ts-c',
             sep = '\n -> ')
